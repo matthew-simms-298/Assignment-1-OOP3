@@ -1,5 +1,7 @@
 package sorts;
-
+/**
+ * @author Matthew Simms
+ */
 public class QuickSort {
 
     public void swapValues(int[] array, int index, int jndex) {
@@ -8,7 +10,6 @@ public class QuickSort {
         array[jndex] = placeHolder;
 
     }
-
 
      public int partitionArray(int leftBound, int rightBound, int[] array) {
         int pivot = array[rightBound];
