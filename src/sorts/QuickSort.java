@@ -4,34 +4,40 @@ package sorts;
  */
 public class QuickSort {
 
-    public void swapValues(int[] array, int index, int jndex) {
-        int placeHolder = array[index];
-        array[index] = array[jndex];
-        array[jndex] = placeHolder;
+    private int[] Body;
+
+    public QuickSort(int...args){
+        this.Body = args;
+    }
+
+    public void swapValues(int index, int jndex) {
+        int placeHolder = this.Body[index];
+        this.Body[index] = this.Body[jndex];
+        this.Body[jndex] = placeHolder;
 
     }
 
-     public int partitionArray(int leftBound, int rightBound, int[] array) {
-        int pivot = array[rightBound];
+     public int partitionArray(int leftBound, int rightBound) {
+        int pivot = this.Body[rightBound];
 
         int index = leftBound - 1;
 
         for (int jndex = leftBound; jndex <= rightBound - 1; jndex++) {
-            if (array[rightBound] < pivot) {
+            if (this.Body[rightBound] < pivot) {
                 index++;
-                swapValues(array, index, jndex);
+                swapValues(index, jndex);
             }
         }
-        swapValues(array, index + 1, rightBound);
+        swapValues(index + 1, rightBound);
         return index + 1;
     }
 
-    public void quickSort(int[] array, int leftBound, int rightBound) {
+    public void quickSort(int leftBound, int rightBound) {
         if (leftBound < rightBound) {
             int partition = partitionArray(leftBound, rightBound, array);
 
-            quickSort(array, leftBound, partition - 1);
-            quickSort(array, partition + 1, rightBound);
+            quickSort(leftBound, partition - 1);
+            quickSort(partition + 1, rightBound);
         }
     }
 }

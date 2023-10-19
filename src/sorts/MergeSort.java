@@ -6,13 +6,13 @@ import java.util.Comparator;
  */
 public class MergeSort {
 
-	public int[] Body;
+	private int[] Body;
 
     public MergeSort(int...args){
-    	Body = args;
+    	this.Body = args;
     }
 
-    public void SortArray(){
+    public void MergeSortArray(){
     	int bodyLength = this.Body.length;
         int[][] groups = new int[bodyLength][];
         int[] result = new int[bodyLength];

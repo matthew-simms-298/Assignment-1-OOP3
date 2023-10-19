@@ -4,10 +4,16 @@ package sorts;
  */
 public class CustomSort {
 
-    public void customSort(int[] array){
-        for (int index : array) {
-            if (array[index] > array[index + 1] && array[index + 1] != 0) {
-                array[index + 1] = 0;
+    private int[] Body;
+
+    public CustomSort(int...args){
+        this.Body = args;
+    }
+
+    public void customSort(){
+        for (int index : this.Body) {
+            if (this.Body[index] > this.Body[index + 1] && this.Body[index + 1] != 0) {
+                this.Body[index + 1] = 0;
             }
         }
     }
