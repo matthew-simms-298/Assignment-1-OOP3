@@ -36,7 +36,7 @@ public class FileHandler {
                 fileImporter(filePathBig);
             default:
                 System.out.println("Error: Input not valid");
-                //throw invalidFileSelectException;
+                //throw InvalidFileSelectException;
         }
 
     }
