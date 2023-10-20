@@ -34,7 +34,7 @@ public class QuickSort {
 
     public void quickSort(int leftBound, int rightBound) {
         if (leftBound < rightBound) {
-            int partition = partitionArray(leftBound, rightBound, array);
+            int partition = partitionArray(leftBound, rightBound);
 
             quickSort(leftBound, partition - 1);
             quickSort(partition + 1, rightBound);

@@ -10,7 +10,7 @@ public class BubbleSort {
 		this.Body = args;
 	}
 
-    	public static void bubbleSort() {
+    	public void bubbleSort() {
 		int alength = this.Body.length-1;
 		boolean swap;
 		for (int a = 0; a<alength; a++) {
