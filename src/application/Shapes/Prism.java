@@ -87,5 +87,4 @@ public class Prism extends Shape {
 				this.type = null;
 		}
 	}
-	
 }
