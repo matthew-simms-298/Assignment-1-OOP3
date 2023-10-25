@@ -7,7 +7,7 @@ public abstract class Shape implements Comparable<Shape>, Comparator<Shape> {
     public abstract double getBaseArea();
     public abstract double getVolume();
     public abstract Base getBase();
-    public abstract double getEdgeLength *
+    public abstract double getEdgeLength();
     @Override
     public int compareTo(Shape s) {
         return Double.compare(this.getHeight(), s.getHeight());

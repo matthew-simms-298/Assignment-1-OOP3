@@ -35,4 +35,16 @@ public class Cylinder extends Shape {
         return num;
     }
 
+	@Override
+	public Base getBase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double getEdgeLength() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

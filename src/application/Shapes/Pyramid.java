@@ -35,4 +35,16 @@ public class Pyramid extends Shape{
     public double setRadius(double num){
         return num;
     }
+
+	@Override
+	public Base getBase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double getEdgeLength() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

@@ -4,5 +4,8 @@ Group 10:
 
 Matthew Simms,
 Ryan Clarkson,
-Mitchell Kelm,
 Theodore Wells
+
+To run the code:
+
+1. 
