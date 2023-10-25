@@ -4,6 +4,9 @@ package sorts;
  */
 public class SelectionSort {
 
+    public SelectionSort() {
+        
+    }
     
     public static int selectionSort(int[] array) {
         int smallestIndex;

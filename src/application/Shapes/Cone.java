@@ -4,6 +4,8 @@ public class Cone extends Shape{
     private double height;
     private double radius;
 	
+    public Cone(){}
+
     public Cone(double h, double r) {
     	this.height = h;
     	this.radius = r;
@@ -24,6 +26,14 @@ public class Cone extends Shape{
     @Override
     public double getVolume() {
         return (1.0/3.0) * getBaseArea() * height;
+    }
+
+    public double setHeight(double num){
+        return num;
+    }
+
+    public double setRadius(double num){
+        return num;
     }
 
 }

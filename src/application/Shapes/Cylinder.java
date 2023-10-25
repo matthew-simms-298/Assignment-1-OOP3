@@ -5,6 +5,8 @@ public class Cylinder extends Shape {
     private double height;
     private double radius;
 	
+	public Cylinder(){}
+
     public Cylinder(double h, double r) {
     	this.height = h;
     	this.radius = r;
@@ -24,5 +26,13 @@ public class Cylinder extends Shape {
 	public double getVolume() {
 		return getBaseArea() * height;
 	}
+
+	public double setHeight(double num){
+        return num;
+    }
+
+    public double setRadius(double num){
+        return num;
+    }
 
 }
