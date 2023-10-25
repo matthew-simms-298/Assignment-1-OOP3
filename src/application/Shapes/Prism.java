@@ -6,15 +6,15 @@ public class Prism extends Shape {
     private double height;
     private Base type;
 	
-    public Prism(double e, double h, Base t) {
-    	this.edgeLength = e;
-    	this.height = h;
-    	this.type = t;
-    }
+	public Prism(){}
     
 	@Override
 	public double getHeight() {
 		return this.height;
+	}
+
+	public Base getBase(){
+		return this.type;
 	}
 
 	@Override
@@ -61,5 +61,31 @@ public class Prism extends Shape {
 		return val;
 	}
 
+	public void setHeight(double var){
+		this.height = var;
+	}
+
+	public void setEdgeLength(double var){
+		this.edgeLength = var;
+	}
+
+	public void setBase(String base){
+		switch(base.toUpperCase()){
+			case "EQUILATERIAL":
+				this.type = Base.EQUILATERIAL;
+				break;
+			case "OCTOGONAL":
+				this.type = Base.OCTOGONAL;
+				break;
+			case "PENTAGONAL":
+				this.type = Base.PENTAGONAL;
+				break;
+			case "SQUARE":
+				this.type = Base.SQUARE;
+				break;
+			default:
+				this.type = null;
+		}
+	}
 	
 }

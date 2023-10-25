@@ -5,10 +5,7 @@ public class Cylinder extends Shape {
     private double height;
     private double radius;
 	
-    public Cylinder(double h, double r) {
-    	this.height = h;
-    	this.radius = r;
-    }
+    public Cylinder(){}
     
 	@Override
 	public double getHeight() {
@@ -23,6 +20,14 @@ public class Cylinder extends Shape {
 	@Override
 	public double getVolume() {
 		return getBaseArea() * height;
+	}
+
+	public void setHeight(double var){
+		this.height = var;
+	}
+
+	public void setRadius(double var){
+		this.radius = var;
 	}
 
 }

@@ -4,10 +4,7 @@ public class Pyramid extends Shape{
     private double height;
     private double radius;
 	
-    public Pyramid(double h, double r) {
-    	this.height = h;
-    	this.radius = r;
-    }
+    public Pyramid() {}
     
     @Override
     public double getHeight() {
@@ -26,4 +23,11 @@ public class Pyramid extends Shape{
         return (1.0/3.0) * getBaseArea() * height;
     }
 
+    public void setHeight(double var){
+		this.height = var;
+	}
+
+    public void setRadius(double var){
+		this.radius = var;
+	}
 }
