@@ -49,8 +49,10 @@ public class FileHandler {
 
     }
 
-    public void fileImporter(String filePath) {
+    public Shape[] fileImporter(String filePath) {
+    	Shape[] foundShapes = new Shape[contentAmountNum]; int currpoint = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath)) ) {
+        	
             String[] group = new String[contentAmountNum]; String[] comb = new String[contentAmountNum];
             // Read the lines and store them in the array
             String line;
@@ -65,7 +67,7 @@ public class FileHandler {
             		comb[x] = group[i]+","+group[j]+","+group[n];
             	}
             }
-            Object[] foundShapes = new Object[contentAmountNum]; int currpoint = 0;
+            
 
             for(String par: comb){
                 String[] check = new String[par.split(",").length];
@@ -112,6 +114,7 @@ public class FileHandler {
          * Create a loop to save each line of the text file into an array
          */
         //Print Array - See if array has been created correctly
+		return foundShapes;
     }
 
 }

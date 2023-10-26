@@ -33,11 +33,17 @@ public class QuickSort {
     }
 
     public void quickSort(int leftBound, int rightBound) {
+    	long start = System.currentTimeMillis();
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
+    	
         if (leftBound < rightBound) {
             int partition = partitionArray(leftBound, rightBound);
 
             quickSort(leftBound, partition - 1);
             quickSort(partition + 1, rightBound);
+            
+            System.out.print("Quick Sort Time: " + time);
         }
     }
 }

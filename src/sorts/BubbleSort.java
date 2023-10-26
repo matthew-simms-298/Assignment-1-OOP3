@@ -11,6 +11,10 @@ public class BubbleSort {
 	}
 
     	public void bubbleSort() {
+    	long start = System.currentTimeMillis();
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
+    	
 		int alength = this.Body.length-1;
 		boolean swap;
 		for (int a = 0; a<alength; a++) {
@@ -28,6 +32,7 @@ public class BubbleSort {
 				break;
 			}
 		}
+		System.out.println("Bubble Sort Time: " + time);
 	}
 
 }
