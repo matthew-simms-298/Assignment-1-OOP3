@@ -34,16 +34,16 @@ public class FileHandler {
         switch (fileSelect) {
             case 1: // Importing the data from the text file with filePath 1;
                 contentAmountNum = 20237;
-                importedShapes = fileImporter(filePath1);
+                importedShapes = fileImporter(filePath1,contentAmountNum);
             case 2: // Importing the data from the text file with filePath 3
                 contentAmountNum = 472956;
-                importedShapes = fileImporter(filePath3);
+                importedShapes = fileImporter(filePath3,contentAmountNum);
             case 3: // Importing the data from the text file with filePath 5
                 contentAmountNum = 1078499;
-                importedShapes = fileImporter(filePath5);
+                importedShapes = fileImporter(filePath5,contentAmountNum);
             case 4: // Importing the data from the text file with filePathBig
                 contentAmountNum = 8388608;
-                importedShapes = fileImporter(filePathBig);
+                importedShapes = fileImporter(filePathBig,contentAmountNum);
             default:
                 System.out.println("Error: Input not valid");
                 //throw InvalidFileSelectException;
@@ -51,9 +51,10 @@ public class FileHandler {
         return importedShapes;
     }
 
-    public Object[] fileImporter(String filePath) {
+    public Object[] fileImporter(String filePath, int contentAmount) {
+        Object[] foundShapes = new Object[contentAmount];
         try (BufferedReader br = new BufferedReader(new FileReader(filePath)) ) {
-            String[] group = new String[contentAmountNum]; String[] comb = new String[contentAmountNum];
+            String[] group = new String[contentAmount]; String[] comb = new String[contentAmount];
             // Read the lines and store them in the array
             String line;
             while ((line = br.readLine()) != null) {
@@ -67,7 +68,7 @@ public class FileHandler {
             		comb[x] = group[i]+","+group[j]+","+group[n];
             	}
             }
-            Object[] foundShapes = new Object[contentAmountNum]; int currpoint = 0;
+            int currpoint = 0;
 
             for(String par: comb){
                 String[] check = new String[par.split(",").length];
