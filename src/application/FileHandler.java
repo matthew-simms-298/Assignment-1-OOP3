@@ -16,12 +16,12 @@ public class FileHandler {
 
     private int contentAmountNum = 0;
 
-    public Object[] fileImport() {
+    public Shape[] fileImport() {
         /**
          * This method will import the data from the text file and store it in a list
          */
 
-        Object[] importedShapes = null;
+        Shape[] importedShapes = null;
 
         // Scanner to get user input for which file to import
         Scanner fileSelectScanner = new Scanner(System.in);
@@ -51,8 +51,8 @@ public class FileHandler {
         return importedShapes;
     }
 
-    public Object[] fileImporter(String filePath, int contentAmount) {
-        Object[] foundShapes = new Object[contentAmount];
+    public Shape[] fileImporter(String filePath, int contentAmount) {
+        Shape[] foundShapes = new Shape[contentAmount];
         try (BufferedReader br = new BufferedReader(new FileReader(filePath)) ) {
             String[] group = new String[contentAmount]; String[] comb = new String[contentAmount];
             // Read the lines and store them in the array
