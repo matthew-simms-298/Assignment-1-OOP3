@@ -10,9 +10,13 @@ public class InsertionSort {
 		this.Body = args;
 	}
 	
-    public void InsertionSortArray(){
+    public void InsertionSortArray() {
+    	long start = System.currentTimeMillis();
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
+    	
         int arrayLength = this.Body.length;
-        for (int i = 1; i < arrayLength; i++){
+        for (int i = 1; i < arrayLength; i++) {
             int key = this.Body[i];
             int j = i - 1;
             while (j >= 0 && this.Body[j] > key){
@@ -21,5 +25,6 @@ public class InsertionSort {
             }
             this.Body[j+1] = key;
         }
+        System.out.println("Insertion Sort: " + time);
     }
 }

@@ -4,11 +4,16 @@ package sorts;
  */
 public class SelectionSort {
 
-    public SelectionSort() {
-        
+	private int[] Body;
+    public SelectionSort(int ...args) {
+    	this.Body = args;
     }
     
-    public static int selectionSort(int[] array) {
+    public void selectionSort(int[] array) {
+    	long start = System.currentTimeMillis();
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
+    	
         int smallestIndex;
         int temporary;
         for (int index = 0; index < array.length - 1; index++) {
@@ -23,6 +28,6 @@ public class SelectionSort {
             array[index] = array[smallestIndex];
             array[smallestIndex] = temporary;
         }
-        return 0;
+        System.out.println("Selection Sort: " + time);
     }
 }

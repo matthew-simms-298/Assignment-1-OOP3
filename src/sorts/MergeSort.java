@@ -12,7 +12,11 @@ public class MergeSort {
     	this.Body = args;
     }
 
-    public void MergeSortArray(){
+    public void MergeSortArray() {
+    	long start = System.currentTimeMillis();
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
+    	
     	int bodyLength = this.Body.length;
         int[][] groups = new int[bodyLength][];
         int[] result = new int[bodyLength];
@@ -26,6 +30,8 @@ public class MergeSort {
         {result[i] = groups[i][0];}
         
         this.Body = result;
+        
+        System.out.println("Merge Sort: " + time);
         
     }
 }
