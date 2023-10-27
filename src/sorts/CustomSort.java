@@ -19,7 +19,7 @@ public class CustomSort {
             if (this.Body[index] > this.Body[index + 1] && this.Body[index + 1] != 0) {
                 this.Body[index + 1] = 0;
             }
-            System.out.println("Custome Sort Time: " + time);
+            System.out.println("Custom Sort Time: " + time);
         }
     }
 
