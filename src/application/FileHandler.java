@@ -16,10 +16,12 @@ public class FileHandler {
 
     private int contentAmountNum = 0;
 
-    public void fileImport() {
+    public Object[] fileImport() {
         /**
          * This method will import the data from the text file and store it in a list
          */
+
+        Object[] importedShapes = null;
 
         // Scanner to get user input for which file to import
         Scanner fileSelectScanner = new Scanner(System.in);
@@ -32,24 +34,24 @@ public class FileHandler {
         switch (fileSelect) {
             case 1: // Importing the data from the text file with filePath 1;
                 contentAmountNum = 20237;
-                fileImporter(filePath1);
+                importedShapes = fileImporter(filePath1);
             case 2: // Importing the data from the text file with filePath 3
                 contentAmountNum = 472956;
-                fileImporter(filePath3);
+                importedShapes = fileImporter(filePath3);
             case 3: // Importing the data from the text file with filePath 5
                 contentAmountNum = 1078499;
-                fileImporter(filePath5);
+                importedShapes = fileImporter(filePath5);
             case 4: // Importing the data from the text file with filePathBig
                 contentAmountNum = 8388608;
-                fileImporter(filePathBig);
+                importedShapes = fileImporter(filePathBig);
             default:
                 System.out.println("Error: Input not valid");
                 //throw InvalidFileSelectException;
         }
-
+        return importedShapes;
     }
 
-    public void fileImporter(String filePath) {
+    public Object[] fileImporter(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath)) ) {
             String[] group = new String[contentAmountNum]; String[] comb = new String[contentAmountNum];
             // Read the lines and store them in the array
@@ -108,10 +110,7 @@ public class FileHandler {
         }
 
         System.out.println("File Imported");
-        /**
-         * Create a loop to save each line of the text file into an array
-         */
-        //Print Array - See if array has been created correctly
+        return foundShapes;
     }
 
 }
