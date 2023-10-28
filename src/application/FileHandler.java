@@ -33,14 +33,14 @@ public class FileHandler {
 
 		// Scanner to get user input for which file to import
 		Scanner fileSelectScanner = new Scanner(System.in);
-		System.out.println("Enter Number on which file you want to import \n");
+		System.out.println("Enter Number on which file you want to import");
 		System.out.println("1: polyfor1.txt\n2: polyfor3.txt\n3: polyfor5.txt\n4: polyNameBIG.txt\n File Select: ");
 		int fileSelect = fileSelectScanner.nextInt(); // Set this to the desired fileSelect value
 		
 		
 		Scanner calculationSelectScanner = new Scanner(System.in);
 		System.out.println("Which Calculate Methods would you like to do with the shapes");
-		System.out.println("1:Calculate Area\n2: Calculate Volume\n Option: ");
+		System.out.println("1:Calculate Area\n2:Calculate Volume\n Option: ");
 		int calculationSelect = calculationSelectScanner.nextInt(); // Set this to the desired fileSelect value
 		
 		fileSelectScanner.close(); calculationSelectScanner.close();
