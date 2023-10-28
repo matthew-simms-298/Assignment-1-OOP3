@@ -10,20 +10,20 @@ public class InsertionSort {
 		this.Body = args;
 	}
 	
-    public void InsertionSortArray() {
+    public void InsertionSortArray(double[] array) {
     	long start = System.currentTimeMillis();
     	long end = System.currentTimeMillis();
     	long time = end - start;
     	
-        int arrayLength = this.Body.length;
-        for (int i = 1; i < arrayLength; i++) {
-            int key = this.Body[i];
-            int j = i - 1;
-            while (j >= 0 && this.Body[j] > key){
-            	this.Body[j+1] = this.Body[j];
-                j--;
+        double arrayLength = array.length;
+        for (int index = 1; index < arrayLength; index++) {
+            double key = array[index];
+            int jndex = index - 1;
+            while (jndex >= 0 && array[jndex] > key){
+            	array[jndex+1] = array[jndex];
+                jndex--;
             }
-            this.Body[j+1] = key;
+            array[jndex + 1] = key;
         }
         System.out.println("Insertion Sort: " + time);
     }

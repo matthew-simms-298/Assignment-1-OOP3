@@ -1,4 +1,7 @@
 package sorts;
+
+import application.Shapes.Shape;
+
 /**
  * @author Matthew Simms
  */
@@ -9,17 +12,17 @@ public class SelectionSort {
     	this.Body = args;
     }
     
-    public void selectionSort(int[] array) {
+    public void selectionSort(double[] array) {
     	long start = System.currentTimeMillis();
     	long end = System.currentTimeMillis();
     	long time = end - start;
     	
         int smallestIndex;
-        int temporary;
+        double temporary;
         for (int index = 0; index < array.length - 1; index++) {
             smallestIndex = index;
             for (int jndex = 0; jndex < array.length - 1; index++) {
-                if (array[jndex] < array[smallestIndex]) {
+                if (array[0] < array[smallestIndex]) {
                     smallestIndex = jndex;
                 }
             }

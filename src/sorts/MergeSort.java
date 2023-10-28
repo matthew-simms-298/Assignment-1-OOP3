@@ -12,24 +12,25 @@ public class MergeSort {
     	this.Body = args;
     }
 
-    public void MergeSortArray() {
+    public void MergeSortArray(double[] array) {
     	long start = System.currentTimeMillis();
     	long end = System.currentTimeMillis();
     	long time = end - start;
     	
-    	int bodyLength = this.Body.length;
-        int[][] groups = new int[bodyLength][];
-        int[] result = new int[bodyLength];
+    	int arrayLength = array.length;
+        double[][] groups = new double[arrayLength][];
+        double[] result = new double[arrayLength];
         
-        for(int i = 0; i<bodyLength; i++) 
-        {groups[i] = new int[] {this.Body[i]};}
+        for(int index = 0; index < arrayLength; index++) 
+        {groups[index] = new double[] {array[index]};}
         
-        Arrays.sort(groups, Comparator.comparingInt(a -> a[0]));
+        // idk what this line is all about
+        // Arrays.sort(groups, Comparator.comparingInt(a -> a[0]));
         
-        for(int i = 0; i<bodyLength; i++) 
+        for(int i = 0; i<arrayLength; i++) 
         {result[i] = groups[i][0];}
         
-        this.Body = result;
+        array = result;
         
         System.out.println("Merge Sort: " + time);
         

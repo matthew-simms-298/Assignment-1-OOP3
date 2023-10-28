@@ -10,20 +10,20 @@ public class BubbleSort {
 		this.Body = args;
 	}
 
-    	public void bubbleSort() {
+    	public void bubbleSort(double[] array) {
     	long start = System.currentTimeMillis();
     	long end = System.currentTimeMillis();
     	long time = end - start;
     	
-		int alength = this.Body.length-1;
+		int arrayLength = array.length;
 		boolean swap;
-		for (int a = 0; a<alength; a++) {
+		for (int index  = 0; index < arrayLength; index ++) {
 			swap = false;
-			for(int b = 0; b<alength-a-1; b++) {
-				if (this.Body[b]>this.Body[b]+1) {
-					int temp = this.Body[b];
-					this.Body[b] = this.Body[b]+1;
-					this.Body[b+1] = temp;
+			for(int jndex  = 0; jndex < arrayLength - index - 1; jndex++) {
+				if (array[jndex] > array[jndex + 1]) {
+					double temp = array[jndex];
+					array[jndex ] = array[jndex + 1];
+					array[jndex + 1] = temp;
 					swap = true;
 				}
 

@@ -11,13 +11,14 @@ public class CustomSort {
     }
     
 
-    public void customSort(){
+    public void customSort(double[] array){
     	long start = System.currentTimeMillis();
     	long end = System.currentTimeMillis();
     	long time = end - start;
-        for (int index : this.Body) {
-            if (this.Body[index] > this.Body[index + 1] && this.Body[index + 1] != 0) {
-                this.Body[index + 1] = 0;
+    	
+        for (int index = 0; index < array.length; index++) {
+            if (array[index] > array[index + 1] && array[index + 1] != 0) {
+                array[index + 1] = 0;
             }
             System.out.println("Custom Sort Time: " + time);
         }
