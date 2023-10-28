@@ -60,16 +60,17 @@ public class FileHandler {
 			contentAmountNum = 8388608;
 			importedShapes = fileImporter(filePathBig,contentAmountNum, areaCheck);
 		default:
-			System.out.println("Error: Input not valid");
+			System.out.println("Error: Input not valid, Input Must Be Between 1-4");
 		}
 
 		// we need to have all the methods to take in an array of Shapes
 		bubbleSort.bubbleSort(importedShapes);
 		mergeSort.MergeSortArray(importedShapes);
-		quickSort.quickSort(importedShapes, 0, importedShapes.length);
-		insertionSort.InsertionSortArray(importedShapes);
 		selectionSort.selectionSort(importedShapes);
+		insertionSort.InsertionSortArray(importedShapes);
+		quickSort.quickSort(importedShapes, 0, importedShapes.length);
 		customSort.customSort(importedShapes);
+
 
 		switch (calculationSelect){
 		case 1:
@@ -79,7 +80,7 @@ public class FileHandler {
 			areaCheck = false;
 			break;
 		default:
-			System.out.println("Invalid Input");
+			System.out.println("Error: Invalid Input. Input Must Be Between 1-2");
 		}
 	}
 
@@ -135,7 +136,7 @@ public class FileHandler {
 							foundShapes[currpoint] = pyramid.getVolume();
 							break;
 						default:
-							throw new IndexOutOfBoundsException();
+							//throw new IndexOutOfBoundsException();
 						}
 					}
 				}
@@ -169,7 +170,7 @@ public class FileHandler {
 							foundShapes[currpoint] = pyramid.getBaseArea();
 							break;
 						default:
-							throw new IndexOutOfBoundsException();
+							//throw new IndexOutOfBoundsException();
 						}
 					}
 				}

@@ -14,8 +14,7 @@ public class SelectionSort {
     
     public void selectionSort(double[] array) {
     	long start = System.currentTimeMillis();
-    	long end = System.currentTimeMillis();
-    	long time = end - start;
+
     	
         int smallestIndex;
         double temporary;
@@ -31,6 +30,8 @@ public class SelectionSort {
             array[index] = array[smallestIndex];
             array[smallestIndex] = temporary;
         }
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
         System.out.println("Selection Sort: " + time);
     }
 }

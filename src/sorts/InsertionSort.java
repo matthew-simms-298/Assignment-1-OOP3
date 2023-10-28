@@ -12,8 +12,6 @@ public class InsertionSort {
 	
     public void InsertionSortArray(double[] array) {
     	long start = System.currentTimeMillis();
-    	long end = System.currentTimeMillis();
-    	long time = end - start;
     	
         double arrayLength = array.length;
         for (int index = 1; index < arrayLength; index++) {
@@ -25,6 +23,8 @@ public class InsertionSort {
             }
             array[jndex + 1] = key;
         }
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
         System.out.println("Insertion Sort: " + time);
     }
 }

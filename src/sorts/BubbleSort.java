@@ -11,10 +11,7 @@ public class BubbleSort {
 	}
 
     	public void bubbleSort(double[] array) {
-    	long start = System.currentTimeMillis();
-    	long end = System.currentTimeMillis();
-    	long time = end - start;
-    	
+    	long start = System.currentTimeMillis();    	
 		int arrayLength = array.length;
 		boolean swap;
 		for (int index  = 0; index < arrayLength; index ++) {
@@ -32,7 +29,10 @@ public class BubbleSort {
 				break;
 			}
 		}
+		long end = System.currentTimeMillis();
+    	long time = end - start;
 		System.out.println("Bubble Sort Time: " + time);
+
 	}
 
 }

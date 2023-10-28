@@ -14,8 +14,6 @@ public class MergeSort {
 
     public void MergeSortArray(double[] array) {
     	long start = System.currentTimeMillis();
-    	long end = System.currentTimeMillis();
-    	long time = end - start;
     	
     	int arrayLength = array.length;
         double[][] groups = new double[arrayLength][];
@@ -31,7 +29,8 @@ public class MergeSort {
         {result[i] = groups[i][0];}
         
         array = result;
-        
+    	long end = System.currentTimeMillis();
+    	long time = end - start;
         System.out.println("Merge Sort: " + time);
         
     }
