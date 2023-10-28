@@ -66,7 +66,7 @@ public class FileHandler {
 		// we need to have all the methods to take in an array of Shapes
 		bubbleSort.bubbleSort(importedShapes);
 		mergeSort.MergeSortArray(importedShapes);
-		quickSort.quickSort(0, importedShapes.length);
+		quickSort.quickSort(importedShapes, 0, importedShapes.length);
 		insertionSort.InsertionSortArray(importedShapes);
 		selectionSort.selectionSort(importedShapes);
 		customSort.customSort(importedShapes);

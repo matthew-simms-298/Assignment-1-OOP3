@@ -1,7 +1,7 @@
 package exceptions;
 
 public class OutOfBoundsException extends Exception{
-    public OutOfBoundsException(String message){
+    public String OutOfBoundsException(String message){
         return message;
     }
     public OutOfBoundsException(){
