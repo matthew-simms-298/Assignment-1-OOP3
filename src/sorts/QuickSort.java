@@ -3,6 +3,13 @@ package sorts;
  * @author Matthew Simms
  */
 public class QuickSort {
+	/*
+	 *  this needs to be reworked in order to have the 
+	 * quick sort take in a the array as well. Only thing is
+	 * you need to import the array in the class and not
+	 * the method or else it will reset the values every time
+	 * you run it 
+	 */
 
     private int[] Body;
 

@@ -2,7 +2,7 @@ package exceptions;
 
 public class InvalidFileSelection extends Exception{
 
-    public InvalidFileSelection(String message){
+    public String InvalidFileSelection(String message){
         return message;
     }
 
