@@ -57,8 +57,8 @@ public class FileHandler {
                 importedShapes = fileImporter(filePathBig,contentAmountNum);
             default:
                 System.out.println("Error: Input not valid");
-                //throw InvalidFileSelectException;
-        
+                throw InvalidFileSelectException();
+        }
         
         // we need to have all the methods to take in an array of Shapes
         bubbleSort.bubbleSort(importedShapes);
@@ -69,41 +69,24 @@ public class FileHandler {
         customSort.customSort(importedShapes);
         }
     }
-
-    public double[] fileImport() {
-        /**
-         * This method will import the data from the text file and store it in a list
-         */
-
-        double[] importedShapes = new double[contentAmountNum];
-
-        // Scanner to get user input for which file to import
-        Scanner fileSelectScanner = new Scanner(System.in);
-        System.out.println("Enter Number on which file you want to import \n");
-        System.out.println("1: polyfor1.txt\n2: polyfor3.txt\n3: polyfor5.txt\n4: polyNameBIG.txt\n File Select: ");
-        int fileSelect = fileSelectScanner.nextInt(); // Set this to the desired fileSelect value
-        fileSelectScanner.close();
-
-        // Select File to import based on user input
-        switch (fileSelect) {
-            case 1: // Importing the data from the text file with filePath 1;
-                contentAmountNum = 20237;
-                importedShapes = fileImporter(filePath1,contentAmountNum);
-            case 2: // Importing the data from the text file with filePath 3
-                contentAmountNum = 472956;
-                importedShapes = fileImporter(filePath3,contentAmountNum);
-            case 3: // Importing the data from the text file with filePath 5
-                contentAmountNum = 1078499;
-                importedShapes = fileImporter(filePath5,contentAmountNum);
-            case 4: // Importing the data from the text file with filePathBig
-                contentAmountNum = 8388608;
-                importedShapes = fileImporter(filePathBig,contentAmountNum);
-            default:
-                System.out.println("Error: Input not valid");
-                //throw InvalidFileSelectException;
-        }
-        return importedShapes;
-    }
+    
+    Scanner calculationSelectScanner = new Scanner(System.in);
+    System.out.println("Which Calculate Methos would you like to do with the shapes \n");
+    System.out.println("1:Calculate Area\n2: Calculate Volume\n Option: ");
+    int calculationSelect = calculationSelectScanner.nextInt(); // Set this to the desired fileSelect value
+    calculationSelectScanner.close();
+    boolean areaCheck = true;
+    switch (calculationSelect){
+    case 1:
+        areaCheck = true;
+        break;
+    case 2:
+        areaCheck = false;
+        break;
+    default:
+        throw OutOfBoundsException();
+        break;
+}
 
     public static double[] fileImporter(File filePath, int contentAmount) {
         double[] foundShapes = new double[contentAmount];
@@ -126,38 +109,77 @@ public class FileHandler {
 
             for(String par: comb){
                 String[] check = new String[par.split(",").length];
-                if(check.length>3){
-                    String uppercased = check[0].toUpperCase();
-                    Prism prism = new Prism();
-                    prism.setHeight(Double.parseDouble(check[2]));
-                    prism.setEdgeLength(Double.parseDouble(check[3]));
-                    prism.setBase(uppercased);
-                    foundShapes[currpoint] = prism.getVolume();
-                }else{
-                    switch (check[0].toUpperCase()){
-                        case "CONE":
-                            Cone cone = new Cone();
-                            cone.setHeight(Double.parseDouble(check[1]));
-                            cone.setRadius(Double.parseDouble(check[2]));
-                            foundShapes[currpoint] = cone.getVolume();
-                            break;
-                        case "CYLINDER":
-                            Cylinder cylinder = new Cylinder();
-                            cylinder.setHeight(Double.parseDouble(check[1]));
-                            cylinder.setRadius(Double.parseDouble(check[2]));
-                            foundShapes[currpoint] = cylinder.getVolume();
-                            break;
-                        case "PYRAMID":
-                            Pyramid pyramid = new Pyramid();
-                            pyramid.setHeight(Double.parseDouble(check[1]));
-                            pyramid.setRadius(Double.parseDouble(check[2]));
-                            foundShapes[currpoint] = pyramid.getVolume();
-                            break;
-                        default:
-                            break;
+                if (!areaCheck) {
+                    if(check.length>3){
+                        String uppercased = check[0].toUpperCase();
+                        Prism prism = new Prism();
+                        prism.setHeight(Double.parseDouble(check[2]));
+                        prism.setEdgeLength(Double.parseDouble(check[3]));
+                        prism.setBase(uppercased);
+                        foundShapes[currpoint] = prism.getVolume();
                     }
-                }
-                currpoint++;
+                    else {
+                        
+                            switch (check[0].toUpperCase()){
+                                case "CONE":
+                                    Cone cone = new Cone();
+                                    cone.setHeight(Double.parseDouble(check[1]));
+                                    cone.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = cone.getVolume();
+                                    break;
+                                case "CYLINDER":
+                                    Cylinder cylinder = new Cylinder();
+                                    cylinder.setHeight(Double.parseDouble(check[1]));
+                                    cylinder.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = cylinder.getVolume();
+                                    break;
+                                case "PYRAMID":
+                                    Pyramid pyramid = new Pyramid();
+                                    pyramid.setHeight(Double.parseDouble(check[1]));
+                                    pyramid.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = pyramid.getVolume();
+                                    break;
+                                default:
+                                    throw OutOfBoundsException();
+                                    break;
+                            }
+                        }
+                        else { // change to Shape.getArea()
+                        if(check.length>3){
+                        String uppercased = check[0].toUpperCase();
+                        Prism prism = new Prism();
+                        prism.setHeight(Double.parseDouble(check[2]));
+                        prism.setEdgeLength(Double.parseDouble(check[3]));
+                        prism.setBase(uppercased);
+                        foundShapes[currpoint] = prism.getArea();
+                    }
+                    else {
+                            switch (check[0].toUpperCase()){
+                                case "CONE":
+                                    Cone cone = new Cone();
+                                    cone.setHeight(Double.parseDouble(check[1]));
+                                    cone.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = cone.getArea();
+                                    break;
+                                case "CYLINDER":
+                                    Cylinder cylinder = new Cylinder();
+                                    cylinder.setHeight(Double.parseDouble(check[1]));
+                                    cylinder.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = cylinder.getArea();
+                                    break;
+                                case "PYRAMID":
+                                    Pyramid pyramid = new Pyramid();
+                                    pyramid.setHeight(Double.parseDouble(check[1]));
+                                    pyramid.setRadius(Double.parseDouble(check[2]));
+                                    foundShapes[currpoint] = pyramid.getArea();
+                                    break;
+                                default:
+                                    throw OutOfBoundsException();
+                                    break; 
+                            }
+                        }
+                    }
+                    currpoint++;
             }
             // This will store each line of the text file in an array
         } catch (Exception e) {
