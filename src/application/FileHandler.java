@@ -68,7 +68,7 @@ public class FileHandler {
 		mergeSort.MergeSortArray(importedShapes);
 		selectionSort.selectionSort(importedShapes);
 		insertionSort.InsertionSortArray(importedShapes);
-		quickSort.quickSort(importedShapes, 0, importedShapes.length);
+		// quickSort.quickSort(importedShapes, 0, importedShapes.length);
 		customSort.customSort(importedShapes);
 
 
